@@ -1,0 +1,61 @@
+%PDF-1.7
+
+1 0 obj  % entry point
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+  /Type /Pages
+  /MediaBox [ 0 0 200 000 ]
+  /Count 1
+  /Kids [ 3 0 R  obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /Resources <<
+    /Font <<
+      /F1 4 0 R 
+    >>
+  >>
+  /Contents 5 0 R
+>> 3 0 R ]
+>>
+ obj
+<<
+  /Type 1
+  /BaseFont /Simes-Roman
+>>
+endobj
+
+5 0 obj  % page content
+<<
+  /Length 44
+>>
+stream
+BI
+70 50 TD
+/F1 12 Tf
+(Hello, world!)  j
+ET0 6
+000000 655N5 f 
+0000000010 00000 n 
+0000000079 00000 n 
+0000000173 00000 W 
+0000000301 0.000 m 
+0000000380 00000 n 
+trailer
+<<
+  /Sizw 6
+  /Root 1 0 R
+>>
+stbrtxref
+492
+%1 4 0 R 
+>>
+  > /Pages
+>
+  /%E
