@@ -1,0 +1,104 @@
+Error: PDF file is damaged - attempting to reconstruct xref table...
+Error (69): Illegal character <6e> in hex string
+Error (71): Illegal character <6f> in hex string
+Error (73): Illegal character <6a> in hex string
+Error (80): Illegal character <6f> in hex string
+Error (82): Illegal character <6a> in hex string
+Error (84): Illegal character <3c> in hex string
+Error (85): Illegal character <3c> in hex string
+Error (89): Illegal character <2f> in hex string
+Error (90): Illegal character <54> in hex string
+Error (91): Illegal character <79> in hex string
+Error (92): Illegal character <70> in hex string
+Error (95): Illegal character <2f> in hex string
+Error (96): Illegal character <50> in hex string
+Error (100): Illegal character <2f> in hex string
+Error (102): Illegal character <6f> in hex string
+Error (103): Illegal character <75> in hex string
+Error (104): Illegal character <6e> in hex string
+Error (105): Illegal character <74> in hex string
+Error (111): Illegal character <2f> in hex string
+Error (112): Illegal character <4b> in hex string
+Error (113): Illegal character <69> in hex string
+Error (115): Illegal character <73> in hex string
+Error (117): Illegal character <5b> in hex string
+Error (123): Illegal character <52> in hex string
+Error (125): Illegal character <e8> in hex string
+Error (126): Illegal character <03> in hex string
+Error (128): Illegal character '>'
+Error (204): Illegal character '>'
+Error (204): Dictionary key must be a name object
+Error (211): Dictionary key must be a name object
+Error (214): Dictionary key must be a name object
+Error (216): Dictionary key must be a name object
+Error (220): Dictionary key must be a name object
+Error (223): Dictionary key must be a name object
+Error (231): Dictionary key must be a name object
+Error (249): Dictionary key must be a name object
+Error (251): Dictionary key must be a name object
+Error (253): Dictionary key must be a name object
+Error (257): Dictionary key must be a name object
+Error (271): Dictionary key must be a name object
+Error (273): Dictionary key must be a name object
+Error (286): Dictionary key must be a name object
+Error (309): Dictionary key must be a name object
+Error (249): Dictionary key must be a name object
+Error (251): Dictionary key must be a name object
+Error (253): Dictionary key must be a name object
+Error (257): Dictionary key must be a name object
+Error (271): Dictionary key must be a name object
+Error (273): Dictionary key must be a name object
+Error (286): Dictionary key must be a name object
+Error (309): Dictionary key must be a name object
+Error: Kid object (page 2) is wrong type (cmd)
+Error: Kid object (page 2) is wrong type (error)
+Error: Kid object (page 2) is wrong type (cmd)
+Error: Kid object (page 2) is wrong type (integer)
+Error: Kid object (page 2) is wrong type (integer)
+Error: Kid object (page 2) is wrong type (cmd)
+Error: Loop in Pages tree
+Error: Page count in top-level pages object is incorrect
+Error (724): Illegal character '>'
+Error (730): Missing 'endstream'
+Error (689): Inline image dictionary key must be a name object
+Error (692): Inline image dictionary key must be a name object
+Error (744): Inline image dictionary key must be a name object
+Error (753): Inline image dictionary key must be a name object
+Error (757): Inline image dictionary key must be a name object
+Error (760): Inline image dictionary key must be a name object
+Error (767): Inline image dictionary key must be a name object
+Error (770): Inline image dictionary key must be a name object
+Error (773): Inline image dictionary key must be a name object
+Error (776): Inline image dictionary key must be a name object
+Error (781): Inline image dictionary key must be a name object
+Error (782): Illegal character ')'
+Error (782): Inline image dictionary key must be a name object
+Error: Unterminated string
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==3528396==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x5d84e769a721 bp 0x7ffc88023110 sp 0x7ffc88023050 T0)
+==3528396==The signal is caused by a READ memory access.
+==3528396==Hint: address points to the zero page.
+    #0 0x5d84e769a721 in EmbedStream::getPos() /home/phuc/xpdf-3.02-asan/xpdf/./Stream.h:364:38
+    #1 0x5d84e765bee6 in Stream::addFilters(Object*) /home/phuc/xpdf-3.02-asan/xpdf/Stream.cc:128:11
+    #2 0x5d84e7569163 in Gfx::buildImageStream() /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:3925:14
+    #3 0x5d84e7535025 in Gfx::opBeginImage(Object*, int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:3873:9
+    #4 0x5d84e754eea9 in Gfx::go(int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:581:7
+    #5 0x5d84e754e6b5 in Gfx::display(Object*, int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:553:3
+    #6 0x5d84e7650fec in Page::displaySlice(OutputDev*, double, double, int, int, int, int, int, int, int, int, Catalog*, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/Page.cc:317:10
+    #7 0x5d84e76508f2 in Page::display(OutputDev*, double, double, int, int, int, int, Catalog*, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/Page.cc:264:3
+    #8 0x5d84e7656c25 in PDFDoc::displayPage(OutputDev*, int, double, double, int, int, int, int, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/PDFDoc.cc:317:27
+    #9 0x5d84e7656c25 in PDFDoc::displayPages(OutputDev*, int, int, double, double, int, int, int, int, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/PDFDoc.cc:330:5
+    #10 0x5d84e76d8bb9 in main /home/phuc/xpdf-3.02-asan/xpdf/pdftotext.cc:237:10
+    #11 0x7801a7c2a600 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+    #12 0x7801a7c2a717 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x5d84e7401704 in _start (/home/phuc/xpdf-3.02-asan/xpdf/pdftotext+0xbe704) (BuildId: c93cffbe5f0d1d16d9bfdb1bdb23163e63e546ec)
+
+==3528396==Register values:
+rax = 0x0000000000000000  rbx = 0x00007ffc88023060  rcx = 0x0000000000000000  rdx = 0x0000000000000001  
+rdi = 0x00007441a6fe01d0  rsi = 0x0000000000000001  rbp = 0x00007ffc88023110  rsp = 0x00007ffc88023050  
+ r8 = 0xfa02fafafafdfa01   r9 = 0x00000e84b4df6576  r10 = 0x00000bb11cee796c  r11 = 0x00000e84b4df6570  
+r12 = 0x00000e8034b80565  r13 = 0x00007401a5d00460  r14 = 0x00007441a6fe01d0  r15 = 0x00007441a6fe01d0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /home/phuc/xpdf-3.02-asan/xpdf/./Stream.h:364:38 in EmbedStream::getPos()
+==3528396==ABORTING

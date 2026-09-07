@@ -1,0 +1,68 @@
+Error: PDF file is damaged - attempting to reconstruct xref table...
+Error: Kid object (page 1) is wrong type (null)
+Error: Kid object (page 1) is wrong type (cmd)
+Error: Loop in Pages tree
+Error: font resource is not a dictionary
+Error (445): Missing 'endstream'
+Error (403): Inline image dictionary key must be a name object
+Error (407): Inline image dictionary key must be a name object
+Error (410): Inline image dictionary key must be a name object
+Error (432): Inline image dictionary key must be a name object
+Error (436): Inline image dictionary key must be a name object
+Error (438): Inline image dictionary key must be a name object
+Error (445): Inline image dictionary key must be a name object
+Error (449): Inline image dictionary key must be a name object
+Error (451): Inline image dictionary key must be a name object
+Error (453): Inline image dictionary key must be a name object
+Error (465): Inline image dictionary key must be a name object
+Error (471): Inline image dictionary key must be a name object
+Error (473): Inline image dictionary key must be a name object
+Error (485): Inline image dictionary key must be a name object
+Error (491): Inline image dictionary key must be a name object
+Error (493): Inline image dictionary key must be a name object
+Error (505): Inline image dictionary key must be a name object
+Error (511): Inline image dictionary key must be a name object
+Error (513): Inline image dictionary key must be a name object
+Error (525): Inline image dictionary key must be a name object
+Error (531): Inline image dictionary key must be a name object
+Error (533): Inline image dictionary key must be a name object
+Error (545): Inline image dictionary key must be a name object
+Error (551): Inline image dictionary key must be a name object
+Error (553): Inline image dictionary key must be a name object
+Error (562): Inline image dictionary key must be a name object
+Error (565): Inline image dictionary key must be a name object
+Error (573): Inline image dictionary key must be a name object
+Error (606): Inline image dictionary key must be a name object
+Error (619): Inline image dictionary key must be a name object
+Error (623): Illegal character '>'
+Error (623): Inline image dictionary key must be a name object
+Error (630): Inline image dictionary key must be a name object
+Error (632): Illegal character '>'
+Error (632): Inline image dictionary key must be a name object
+Error: Bad image parameters
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==3528388==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x5a71c688fd73 bp 0x000000000001 sp 0x7fffaa77f590 T0)
+==3528388==The signal is caused by a READ memory access.
+==3528388==Hint: address points to the zero page.
+    #0 0x5a71c688fd73 in EmbedStream::getChar() /home/phuc/xpdf-3.02-asan/xpdf/Stream.cc:787:15
+    #1 0x5a71c67620ac in Gfx::opBeginImage(Object*, int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:3880:37
+    #2 0x5a71c677bea9 in Gfx::go(int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:581:7
+    #3 0x5a71c677b6b5 in Gfx::display(Object*, int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:553:3
+    #4 0x5a71c687dfec in Page::displaySlice(OutputDev*, double, double, int, int, int, int, int, int, int, int, Catalog*, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/Page.cc:317:10
+    #5 0x5a71c687d8f2 in Page::display(OutputDev*, double, double, int, int, int, int, Catalog*, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/Page.cc:264:3
+    #6 0x5a71c6883c25 in PDFDoc::displayPage(OutputDev*, int, double, double, int, int, int, int, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/PDFDoc.cc:317:27
+    #7 0x5a71c6883c25 in PDFDoc::displayPages(OutputDev*, int, int, double, double, int, int, int, int, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/PDFDoc.cc:330:5
+    #8 0x5a71c6905bb9 in main /home/phuc/xpdf-3.02-asan/xpdf/pdftotext.cc:237:10
+    #9 0x73f53942a600 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+    #10 0x73f53942a717 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x5a71c662e704 in _start (/home/phuc/xpdf-3.02-asan/xpdf/pdftotext+0xbe704) (BuildId: c93cffbe5f0d1d16d9bfdb1bdb23163e63e546ec)
+
+==3528388==Register values:
+rax = 0x0000000000000000  rbx = 0x00007035387e01d0  rcx = 0x0000000000000000  rdx = 0x0000000000000001  
+rdi = 0x0000000000000000  rsi = 0x0000000000000001  rbp = 0x0000000000000001  rsp = 0x00007fffaa77f590  
+ r8 = 0x0000000000007025   r9 = 0x00006ff537400da0  r10 = 0x00000000000070c5  r11 = 0x0000000000000000  
+r12 = 0x00006ff537717040  r13 = 0x00005a71c73f5fc0  r14 = 0x00000e06a70fc03a  r15 = 0x000070c5387e01e0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /home/phuc/xpdf-3.02-asan/xpdf/Stream.cc:787:15 in EmbedStream::getChar()
+==3528388==ABORTING

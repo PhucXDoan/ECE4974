@@ -1,0 +1,351 @@
+Script started on 2026-09-07 15:42:59-04:00 [COMMAND="make" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="238" LINES="71"]
+cd goo; make
+make[1]: Entering directory '/home/phuc/xpdf-3.02-asan-ubsan/goo'
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I. -c GHash.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 307 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I. -c GList.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 120 locations with no collisions (non-hardened mode) of which are 5 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I. -c GString.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 672 locations with no collisions (non-hardened mode) of which are 15 handled and 0 unhandled special instructions. 7 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I. -c gmem.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 37 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I. -c gmempp.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I. -c gfile.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 209 locations with no collisions (non-hardened mode) of which are 6 handled and 0 unhandled special instructions. 4 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I. -c FixedPoint.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I.   -c -o parseargs.o parseargs.c
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 174 locations with no collisions (non-hardened mode) of which are 2 handled and 0 unhandled special instructions. 2 instrumentations saved.[0m
+rm -f libGoo.a
+ar rc libGoo.a GHash.o GList.o GString.o gmem.o gmempp.o gfile.o FixedPoint.o parseargs.o
+ranlib libGoo.a
+make[1]: Leaving directory '/home/phuc/xpdf-3.02-asan-ubsan/goo'
+cd fofi; make
+make[1]: Entering directory '/home/phuc/xpdf-3.02-asan-ubsan/fofi'
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I. -c FoFiBase.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 136 locations with no collisions (non-hardened mode) of which are 3 handled and 0 unhandled special instructions. 3 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I. -c FoFiEncodings.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I. -c FoFiTrueType.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 2066 locations with no collisions (non-hardened mode) of which are 28 handled and 0 unhandled special instructions. 4 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I. -c FoFiType1.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 244 locations with no collisions (non-hardened mode) of which are 3 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I. -c FoFiType1C.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 3407 locations with no collisions (non-hardened mode) of which are 21 handled and 0 unhandled special instructions. 8 instrumentations saved.[0m
+rm -f libfofi.a
+ar rc libfofi.a FoFiBase.o FoFiEncodings.o FoFiTrueType.o FoFiType1.o FoFiType1C.o
+ranlib libfofi.a
+make[1]: Leaving directory '/home/phuc/xpdf-3.02-asan-ubsan/fofi'
+cd splash; make
+make[1]: Entering directory '/home/phuc/xpdf-3.02-asan-ubsan/splash'
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c Splash.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 2990 locations with no collisions (non-hardened mode) of which are 55 handled and 0 unhandled special instructions. 6 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashBitmap.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 197 locations with no collisions (non-hardened mode) of which are 1 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashClip.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 468 locations with no collisions (non-hardened mode) of which are 3 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashFTFont.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashFTFontEngine.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashFTFontFile.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashFont.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 187 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashFontEngine.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 154 locations with no collisions (non-hardened mode) of which are 1 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashFontFile.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 35 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashFontFileID.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 2 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashPath.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 214 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashPattern.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 32 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashScreen.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 446 locations with no collisions (non-hardened mode) of which are 10 handled and 0 unhandled special instructions. 3 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashState.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 207 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashT1Font.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashT1FontEngine.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashT1FontFile.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashXPath.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 393 locations with no collisions (non-hardened mode) of which are 23 handled and 0 unhandled special instructions. 3 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I.   -c SplashXPathScanner.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 448 locations with no collisions (non-hardened mode) of which are 16 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+rm -f libsplash.a
+ar rc libsplash.a Splash.o SplashBitmap.o SplashClip.o SplashFTFont.o SplashFTFontEngine.o SplashFTFontFile.o SplashFont.o SplashFontEngine.o SplashFontFile.o SplashFontFileID.o SplashPath.o SplashPattern.o SplashScreen.o SplashState.o SplashT1Font.o SplashT1FontEngine.o SplashT1FontFile.o SplashXPath.o SplashXPathScanner.o
+ranlib libsplash.a
+make[1]: Leaving directory '/home/phuc/xpdf-3.02-asan-ubsan/splash'
+cd xpdf; make all-no-x
+make[1]: Entering directory '/home/phuc/xpdf-3.02-asan-ubsan/xpdf'
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Annot.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 1368 locations with no collisions (non-hardened mode) of which are 22 handled and 0 unhandled special instructions. 10 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Array.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 56 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c BuiltinFont.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 57 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c BuiltinFontTables.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 44 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Catalog.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 317 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c CharCodeToUnicode.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 452 locations with no collisions (non-hardened mode) of which are 2 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c CMap.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 372 locations with no collisions (non-hardened mode) of which are 4 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Decrypt.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 646 locations with no collisions (non-hardened mode) of which are 26 handled and 0 unhandled special instructions. 2 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Dict.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 107 locations with no collisions (non-hardened mode) of which are 1 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Error.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 12 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c FontEncodingTables.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Function.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 1356 locations with no collisions (non-hardened mode) of which are 31 handled and 0 unhandled special instructions. 20 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Gfx.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 4696 locations with no collisions (non-hardened mode) of which are 57 handled and 0 unhandled special instructions. 5 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c GfxFont.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 1573 locations with no collisions (non-hardened mode) of which are 24 handled and 0 unhandled special instructions. 5 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c GfxState.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 5163 locations with no collisions (non-hardened mode) of which are 18 handled and 0 unhandled special instructions. 4 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c GlobalParams.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 2500 locations with no collisions (non-hardened mode) of which are 5 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c JArithmeticDecoder.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 291 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c JBIG2Stream.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 3565 locations with no collisions (non-hardened mode) of which are 44 handled and 0 unhandled special instructions. 3 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c JPXStream.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 3423 locations with no collisions (non-hardened mode) of which are 55 handled and 0 unhandled special instructions. 6 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Lexer.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 349 locations with no collisions (non-hardened mode) of which are 6 handled and 0 unhandled special instructions. 3 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Link.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 623 locations with no collisions (non-hardened mode) of which are 8 handled and 0 unhandled special instructions. 8 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c NameToCharCode.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 110 locations with no collisions (non-hardened mode) of which are 3 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Outline.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 129 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Object.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 162 locations with no collisions (non-hardened mode) of which are 1 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c OutputDev.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 181 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Page.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 399 locations with no collisions (non-hardened mode) of which are 11 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Parser.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 226 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c PDFDoc.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 223 locations with no collisions (non-hardened mode) of which are 2 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c PDFDocEncoding.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c PreScanOutputDev.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 278 locations with no collisions (non-hardened mode) of which are 2 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c PSOutputDev.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 6917 locations with no collisions (non-hardened mode) of which are 123 handled and 0 unhandled special instructions. 24 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c PSTokenizer.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 117 locations with no collisions (non-hardened mode) of which are 2 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c SecurityHandler.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 244 locations with no collisions (non-hardened mode) of which are 6 handled and 0 unhandled special instructions. 2 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c SplashOutputDev.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 2456 locations with no collisions (non-hardened mode) of which are 33 handled and 0 unhandled special instructions. 7 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c Stream.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 4462 locations with no collisions (non-hardened mode) of which are 41 handled and 0 unhandled special instructions. 2 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c UnicodeMap.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 258 locations with no collisions (non-hardened mode) of which are 5 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c XpdfPluginAPI.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;93m[!] [1;97mWARNING: [0mNo instrumentation targets found.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c XRef.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 714 locations with no collisions (non-hardened mode) of which are 9 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c pdftops.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 165 locations with no collisions (non-hardened mode) of which are 11 handled and 0 unhandled special instructions. 2 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.            -o pdftops Annot.o Array.o BuiltinFont.o BuiltinFontTables.o Catalog.o CharCodeToUnicode.o CMap.o Decrypt.o Dict.o Error.o FontEncodingTables.o Function.o Gfx.o GfxFont.o GfxState.o GlobalParams.o JArithmeticDecoder.o JBIG2Stream.o JPXStream.o Lexer.o Link.o NameToCharCode.o Outline.o Object.o OutputDev.o Page.o Parser.o PDFDoc.o PDFDocEncoding.o PreScanOutputDev.o PSOutputDev.o PSTokenizer.o SecurityHandler.o SplashOutputDev.o Stream.o UnicodeMap.o XpdfPluginAPI.o XRef.o pdftops.o \
+	-L../goo -lGoo -L../splash -lsplash   -L../fofi -lfofi -L../goo -lGoo -lm
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c TextOutputDev.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 4568 locations with no collisions (non-hardened mode) of which are 137 handled and 0 unhandled special instructions. 14 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c UnicodeTypeTable.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 34 locations with no collisions (non-hardened mode) of which are 2 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c pdftotext.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 155 locations with no collisions (non-hardened mode) of which are 1 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.            -o pdftotext Annot.o Array.o BuiltinFont.o BuiltinFontTables.o Catalog.o CharCodeToUnicode.o CMap.o Decrypt.o Dict.o Error.o FontEncodingTables.o Function.o Gfx.o GfxFont.o GfxState.o GlobalParams.o JArithmeticDecoder.o JBIG2Stream.o JPXStream.o Lexer.o Link.o NameToCharCode.o Object.o Outline.o OutputDev.o Page.o Parser.o PDFDoc.o PDFDocEncoding.o PSTokenizer.o SecurityHandler.o Stream.o TextOutputDev.o UnicodeMap.o UnicodeTypeTable.o XpdfPluginAPI.o XRef.o pdftotext.o \
+	-L../goo -lGoo -L../fofi -lfofi -L../goo -lGoo -lm
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c pdfinfo.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 318 locations with no collisions (non-hardened mode) of which are 6 handled and 0 unhandled special instructions. 1 instrumentation saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.            -o pdfinfo Annot.o Array.o BuiltinFont.o BuiltinFontTables.o Catalog.o CharCodeToUnicode.o CMap.o Decrypt.o Dict.o Error.o FontEncodingTables.o Function.o Gfx.o GfxFont.o GfxState.o GlobalParams.o JArithmeticDecoder.o JBIG2Stream.o JPXStream.o Lexer.o Link.o NameToCharCode.o Object.o Outline.o OutputDev.o Page.o Parser.o PDFDoc.o PDFDocEncoding.o PSTokenizer.o SecurityHandler.o Stream.o UnicodeMap.o XpdfPluginAPI.o XRef.o pdfinfo.o \
+	-L../goo -lGoo -L../fofi -lfofi -L../goo -lGoo -lm
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c pdffonts.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 195 locations with no collisions (non-hardened mode) of which are 3 handled and 0 unhandled special instructions. 3 instrumentations saved.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.            -o pdffonts Annot.o Array.o BuiltinFont.o BuiltinFontTables.o Catalog.o CharCodeToUnicode.o CMap.o Decrypt.o Dict.o Error.o FontEncodingTables.o Function.o Gfx.o GfxFont.o GfxState.o GlobalParams.o JArithmeticDecoder.o JBIG2Stream.o JPXStream.o Lexer.o Link.o NameToCharCode.o Object.o Outline.o OutputDev.o Page.o Parser.o PDFDoc.o PDFDocEncoding.o PSTokenizer.o SecurityHandler.o Stream.o UnicodeMap.o XpdfPluginAPI.o XRef.o pdffonts.o \
+	-L../goo -lGoo -L../fofi -lfofi -L../goo -lGoo -lm
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c ImageOutputDev.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 186 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.           -c pdfimages.cc
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[0;36mSanitizerCoveragePCGUARD++5.03a[0m
+[1;92m[+] [0mInstrumented 64 locations with no collisions (non-hardened mode) of which are 0 handled and 0 unhandled special instructions.[0m
+/home/phuc/AFLplusplus/afl-clang-fast++ -w -Og -fsanitize=address,undefined -DHAVE_CONFIG_H -I.. -I./../goo -I./../fofi -I./../splash -I.            -o pdfimages Annot.o Array.o BuiltinFont.o BuiltinFontTables.o Catalog.o CharCodeToUnicode.o CMap.o Decrypt.o Dict.o Error.o FontEncodingTables.o Function.o Gfx.o GfxFont.o GfxState.o GlobalParams.o ImageOutputDev.o JArithmeticDecoder.o JBIG2Stream.o JPXStream.o Lexer.o Link.o NameToCharCode.o Object.o Outline.o OutputDev.o Page.o Parser.o PDFDoc.o PDFDocEncoding.o PSTokenizer.o SecurityHandler.o Stream.o UnicodeMap.o XpdfPluginAPI.o XRef.o pdfimages.o \
+	-L../goo -lGoo -L../fofi -lfofi -L../goo -lGoo -lm
+[0;36mafl-cc++5.03a[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+make[1]: Leaving directory '/home/phuc/xpdf-3.02-asan-ubsan/xpdf'
+
+Script done on 2026-09-07 15:43:43-04:00 [COMMAND_EXIT_CODE="0"]

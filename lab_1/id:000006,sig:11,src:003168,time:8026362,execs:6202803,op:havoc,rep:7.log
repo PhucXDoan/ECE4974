@@ -1,0 +1,148 @@
+Error: PDF version C.7 -- xpdf supports version 1.7 (continuing anyway)
+Error: PDF file is damaged - attempting to reconstruct xref table...
+Error (1096): Dictionary key must be a name object
+Error (1104): Dictionary key must be a name object
+Error (1131): Dictionary key must be a name object
+Error (1158): Dictionary key must be a name object
+Error (1168): Illegal digit in hex char in name
+Error (1184): Illegal digit in hex char in name
+Error (1195): Illegal digit in hex char in name
+Error (1195): Dictionary key must be a name object
+Error (1209): Dictionary key must be a name object
+Error (1228): Dictionary key must be a name object
+Error (1232): Dictionary key must be a name object
+Error (1251): Dictionary key must be a name object
+Error (1278): Dictionary key must be a name object
+Error (1288): Illegal digit in hex char in name
+Error (1315): Illegal digit in hex char in name
+Error (1315): Dictionary key must be a name object
+Error (1329): Dictionary key must be a name object
+Error (1348): Dictionary key must be a name object
+Error (1352): Dictionary key must be a name object
+Error (1363): Dictionary key must be a name object
+Error (1391): Dictionary key must be a name object
+Error (1131): Dictionary key must be a name object
+Error (1158): Dictionary key must be a name object
+Error (1168): Illegal digit in hex char in name
+Error (1184): Illegal digit in hex char in name
+Error (1195): Illegal digit in hex char in name
+Error (1195): Dictionary key must be a name object
+Error (1209): Dictionary key must be a name object
+Error (1228): Dictionary key must be a name object
+Error (1232): Dictionary key must be a name object
+Error (1251): Dictionary key must be a name object
+Error (1278): Dictionary key must be a name object
+Error (1288): Illegal digit in hex char in name
+Error (1315): Illegal digit in hex char in name
+Error (1315): Dictionary key must be a name object
+Error (1329): Dictionary key must be a name object
+Error (1348): Dictionary key must be a name object
+Error (1352): Dictionary key must be a name object
+Error (1363): Dictionary key must be a name object
+Error (1391): Dictionary key must be a name object
+Error (64): Dictionary key must be a name object
+Error (66): Dictionary key must be a name object
+Error (70): Dictionary key must be a name object
+Error (73): Illegal character <3d> in hex string
+Error (74): Illegal character <02> in hex string
+Error (75): Illegal character <72> in hex string
+Error (76): Illegal character <79> in hex string
+Error (78): Illegal character <70> in hex string
+Error (79): Illegal character <6f> in hex string
+Error (80): Illegal character <69> in hex string
+Error (81): Illegal character <6e> in hex string
+Error (82): Illegal character <74> in hex string
+Error (84): Illegal character <3c> in hex string
+Error (85): Illegal character <3c> in hex string
+Error (89): Illegal character <2f> in hex string
+Error (90): Illegal character <54> in hex string
+Error (91): Illegal character <79> in hex string
+Error (92): Illegal character <70> in hex string
+Error (95): Illegal character <2f> in hex string
+Error (98): Illegal character <74> in hex string
+Error (100): Illegal character <6c> in hex string
+Error (101): Illegal character <6f> in hex string
+Error (102): Illegal character <67> in hex string
+Error (106): Illegal character <2f> in hex string
+Error (107): Illegal character <50> in hex string
+Error (109): Illegal character <67> in hex string
+Error (111): Illegal character <73> in hex string
+Error (117): Illegal character <52> in hex string
+Error (119): Dictionary key must be a name object
+Error (120): Illegal character '>'
+Error (120): Dictionary key must be a name object
+Error (127): Dictionary key must be a name object
+Error (130): Dictionary key must be a name object
+Error (132): Dictionary key must be a name object
+Error (136): Dictionary key must be a name object
+Error (139): Dictionary key must be a name object
+Error (147): Dictionary key must be a name object
+Error (383): Illegal character '}'
+Error: Unknown font type: '???'
+Error (1613): Missing 'endstream'
+Error (1571): Inline image dictionary key must be a name object
+Error (1575): Inline image dictionary key must be a name object
+Error (1578): Inline image dictionary key must be a name object
+Error (1600): Inline image dictionary key must be a name object
+Error (1604): Inline image dictionary key must be a name object
+Error (1606): Inline image dictionary key must be a name object
+Error (1613): Inline image dictionary key must be a name object
+Error (1617): Inline image dictionary key must be a name object
+Error (1619): Inline image dictionary key must be a name object
+Error (1621): Inline image dictionary key must be a name object
+Error (1633): Inline image dictionary key must be a name object
+Error (1639): Inline image dictionary key must be a name object
+Error (1641): Inline image dictionary key must be a name object
+Error (1653): Inline image dictionary key must be a name object
+Error (1659): Inline image dictionary key must be a name object
+Error (1669): Inline image dictionary key must be a name object
+Error (1671): Inline image dictionary key must be a name object
+Error (1673): Inline image dictionary key must be a name object
+Error (1689): Inline image dictionary key must be a name object
+Error (1691): Inline image dictionary key must be a name object
+Error (1728): Inline image dictionary key must be a name object
+Error (1730): Inline image dictionary key must be a name object
+Error (1741): Inline image dictionary key must be a name object
+Error (1745): Inline image dictionary key must be a name object
+Error (1747): Inline image dictionary key must be a name object
+Error (1749): Inline image dictionary key must be a name object
+Error (1766): Inline image dictionary key must be a name object
+Error (1790): Inline image dictionary key must be a name object
+Error (1792): Inline image dictionary key must be a name object
+Error (1812): Inline image dictionary key must be a name object
+Error (1848): Inline image dictionary key must be a name object
+Error (1857): Inline image dictionary key must be a name object
+Error (1860): Inline image dictionary key must be a name object
+Error (1868): Inline image dictionary key must be a name object
+Error (1901): Inline image dictionary key must be a name object
+Error (1913): Inline image dictionary key must be a name object
+Error (1919): Inline image dictionary key must be a name object
+Error (1979): Inline image dictionary key must be a name object
+Error: Inline image dictionary key must be a name object
+Error: Bad image parameters
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==3528475==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x5cd051a44d73 bp 0x000000000001 sp 0x7ffd817a0e30 T0)
+==3528475==The signal is caused by a READ memory access.
+==3528475==Hint: address points to the zero page.
+    #0 0x5cd051a44d73 in EmbedStream::getChar() /home/phuc/xpdf-3.02-asan/xpdf/Stream.cc:787:15
+    #1 0x5cd0519170ac in Gfx::opBeginImage(Object*, int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:3880:37
+    #2 0x5cd051930ea9 in Gfx::go(int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:581:7
+    #3 0x5cd0519306b5 in Gfx::display(Object*, int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:553:3
+    #4 0x5cd051a32fec in Page::displaySlice(OutputDev*, double, double, int, int, int, int, int, int, int, int, Catalog*, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/Page.cc:317:10
+    #5 0x5cd051a328f2 in Page::display(OutputDev*, double, double, int, int, int, int, Catalog*, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/Page.cc:264:3
+    #6 0x5cd051a38c25 in PDFDoc::displayPage(OutputDev*, int, double, double, int, int, int, int, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/PDFDoc.cc:317:27
+    #7 0x5cd051a38c25 in PDFDoc::displayPages(OutputDev*, int, int, double, double, int, int, int, int, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/PDFDoc.cc:330:5
+    #8 0x5cd051ababb9 in main /home/phuc/xpdf-3.02-asan/xpdf/pdftotext.cc:237:10
+    #9 0x77c93462a600 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+    #10 0x77c93462a717 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x5cd0517e3704 in _start (/home/phuc/xpdf-3.02-asan/xpdf/pdftotext+0xbe704) (BuildId: c93cffbe5f0d1d16d9bfdb1bdb23163e63e546ec)
+
+==3528475==Register values:
+rax = 0x0000000000000000  rbx = 0x00007409339e0210  rcx = 0x0000000000000000  rdx = 0x0000000000000001  
+rdi = 0x0000000000000000  rsi = 0x0000000000000001  rbp = 0x0000000000000001  rsp = 0x00007ffd817a0e30  
+ r8 = 0x00000000000073f9   r9 = 0x000073c9326033a0  r10 = 0x0000000000007499  r11 = 0x0000000000000000  
+r12 = 0x000073c932917040  r13 = 0x00005cd0525aafc0  r14 = 0x00000e812673c042  r15 = 0x00007499339e01e0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /home/phuc/xpdf-3.02-asan/xpdf/Stream.cc:787:15 in EmbedStream::getChar()
+==3528475==ABORTING

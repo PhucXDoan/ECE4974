@@ -1,0 +1,75 @@
+Error (493): Illegal character '>'
+Error: PDF file is damaged - attempting to reconstruct xref table...
+Error (73): Illegal character <6e> in hex string
+Error (75): Illegal character <6f> in hex string
+Error (77): Illegal character <6a> in hex string
+Error (84): Illegal character <6f> in hex string
+Error (86): Illegal character <6a> in hex string
+Error (88): Illegal character <3c> in hex string
+Error (89): Illegal character <3c> in hex string
+Error (93): Illegal character <2f> in hex string
+Error (94): Illegal character <54> in hex string
+Error (95): Illegal character <79> in hex string
+Error (96): Illegal character <70> in hex string
+Error (99): Illegal character <2f> in hex string
+Error (100): Illegal character <50> in hex string
+Error (104): Illegal character <2f> in hex string
+Error (106): Illegal character <6f> in hex string
+Error (107): Illegal character <75> in hex string
+Error (108): Illegal character <6e> in hex string
+Error (109): Illegal character <74> in hex string
+Error (115): Illegal character <2f> in hex string
+Error (116): Illegal character <4b> in hex string
+Error (117): Illegal character <69> in hex string
+Error (119): Illegal character <73> in hex string
+Error (121): Illegal character <5b> in hex string
+Error (127): Illegal character <52> in hex string
+Error (129): Illegal character <e8> in hex string
+Error (130): Illegal character <03> in hex string
+Error (132): Illegal character '>'
+Error (177): Dictionary key must be a name object
+Error (179): Dictionary key must be a name object
+Error (181): Dictionary key must be a name object
+Error (194): Dictionary key must be a name object
+Error (217): Dictionary key must be a name object
+Error: Kid object (page 1) is wrong type (null)
+Error: Kid object (page 1) is wrong type (cmd)
+Error: Kid object (page 1) is wrong type (error)
+Error: Kid object (page 1) is wrong type (cmd)
+Error: Kid object (page 1) is wrong type (integer)
+Error: Kid object (page 1) is wrong type (integer)
+Error: Kid object (page 1) is wrong type (cmd)
+Error: Loop in Pages tree
+Error (635): Missing 'endstream'
+Error (597): Inline image dictionary key must be a name object
+Error (602): Inline image dictionary key must be a name object
+Error (603): Illegal character ')'
+Error (603): Inline image dictionary key must be a name object
+Error: Unterminated string
+Error: Bad image parameters
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==3528391==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x5ba0ce5c8d73 bp 0x000000000001 sp 0x7ffef8d574d0 T0)
+==3528391==The signal is caused by a READ memory access.
+==3528391==Hint: address points to the zero page.
+    #0 0x5ba0ce5c8d73 in EmbedStream::getChar() /home/phuc/xpdf-3.02-asan/xpdf/Stream.cc:787:15
+    #1 0x5ba0ce49b0ac in Gfx::opBeginImage(Object*, int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:3880:37
+    #2 0x5ba0ce4b4ea9 in Gfx::go(int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:581:7
+    #3 0x5ba0ce4b46b5 in Gfx::display(Object*, int) /home/phuc/xpdf-3.02-asan/xpdf/Gfx.cc:553:3
+    #4 0x5ba0ce5b6fec in Page::displaySlice(OutputDev*, double, double, int, int, int, int, int, int, int, int, Catalog*, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/Page.cc:317:10
+    #5 0x5ba0ce5b68f2 in Page::display(OutputDev*, double, double, int, int, int, int, Catalog*, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/Page.cc:264:3
+    #6 0x5ba0ce5bcc25 in PDFDoc::displayPage(OutputDev*, int, double, double, int, int, int, int, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/PDFDoc.cc:317:27
+    #7 0x5ba0ce5bcc25 in PDFDoc::displayPages(OutputDev*, int, int, double, double, int, int, int, int, int (*)(void*), void*) /home/phuc/xpdf-3.02-asan/xpdf/PDFDoc.cc:330:5
+    #8 0x5ba0ce63ebb9 in main /home/phuc/xpdf-3.02-asan/xpdf/pdftotext.cc:237:10
+    #9 0x7d9b3de2a600 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+    #10 0x7d9b3de2a717 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x5ba0ce367704 in _start (/home/phuc/xpdf-3.02-asan/xpdf/pdftotext+0xbe704) (BuildId: c93cffbe5f0d1d16d9bfdb1bdb23163e63e546ec)
+
+==3528391==Register values:
+rax = 0x0000000000000000  rbx = 0x000079db3d1e01d0  rcx = 0x0000000000000000  rdx = 0x0000000000000001  
+rdi = 0x0000000000000000  rsi = 0x0000000000000001  rbp = 0x0000000000000001  rsp = 0x00007ffef8d574d0  
+ r8 = 0x0000000000007a6b   r9 = 0x0000799b3be01f20  r10 = 0x0000000000007a6b  r11 = 0x0000000000000000  
+r12 = 0x0000799b3c117040  r13 = 0x00005ba0cf12efc0  r14 = 0x00000f3b67a3c03a  r15 = 0x00007a6b3d1e01e0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /home/phuc/xpdf-3.02-asan/xpdf/Stream.cc:787:15 in EmbedStream::getChar()
+==3528391==ABORTING
