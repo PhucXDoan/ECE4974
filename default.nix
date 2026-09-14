@@ -11,9 +11,18 @@ in rec {
 
 
 
-  default = pkgs.linkFarm "builds" [
+  devShell = pkgs.mkShell {
+    buildInputs = [
+      pkgs.aflplusplus
+    ];
+  };
+
+
+
+  default = pkgs.linkFarm "ECE4974" [
     { name = "pdftotext_asan";       path = pdftotext_asan;       }
     { name = "pdftotext_asan_ubsan"; path = pdftotext_asan_ubsan; }
+    { name = "tinyxml2_harness";     path = tinyxml2_harness;     }
   ];
 
 
@@ -40,8 +49,8 @@ in rec {
     # The only program we care about is `pdftotext`.
 
     installPhase = ''
-      mkdir -p $out/
-      cp ./xpdf/pdftotext $out/
+      mkdir -p $out
+      cp ./xpdf/pdftotext $out
     '';
 
   };
@@ -70,12 +79,34 @@ in rec {
     # The only program we care about is `pdftotext`.
 
     installPhase = ''
-      mkdir -p $out/
-      cp ./xpdf/pdftotext $out/
+      mkdir -p $out
+      cp ./xpdf/pdftotext $out
     '';
 
   };
 
 
+
+  tinyxml2_harness = pkgs.stdenv.mkDerivation {
+
+    name = "tinyxml2_harness";
+    src  = ./lab_2/source;
+
+    buildPhase = ''
+      ${pkgs.aflplusplus}/bin/afl-clang-fast++ \
+        -w                                     \
+        -Og                                    \
+        -g                                     \
+        -fsanitize=address,undefined           \
+        -o tinyxml2_harness                    \
+        tinyxml2_harness.cpp
+    '';
+
+    installPhase = ''
+      mkdir -p $out
+      cp -r ./tinyxml2_harness $out
+    '';
+
+  };
 
 }
