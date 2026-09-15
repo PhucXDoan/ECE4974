@@ -85,28 +85,4 @@ in rec {
 
   };
 
-
-
-  tinyxml2_harness = pkgs.stdenv.mkDerivation {
-
-    name = "tinyxml2_harness";
-    src  = ./lab_2/source;
-
-    buildPhase = ''
-      ${pkgs.aflplusplus}/bin/afl-clang-fast++ \
-        -w                                     \
-        -Og                                    \
-        -g                                     \
-        -fsanitize=address,undefined           \
-        -o tinyxml2_harness                    \
-        tinyxml2_harness.cpp
-    '';
-
-    installPhase = ''
-      mkdir -p $out
-      cp -r ./tinyxml2_harness $out
-    '';
-
-  };
-
 }
