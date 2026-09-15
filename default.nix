@@ -22,7 +22,7 @@ in rec {
   default = pkgs.linkFarm "ECE4974" [
     { name = "pdftotext_asan";       path = pdftotext_asan;       }
     { name = "pdftotext_asan_ubsan"; path = pdftotext_asan_ubsan; }
-    { name = "lodepng_harness";      path = lodepng_harness;      }
+    { name = "miniz_harness";        path = miniz_harness;        }
   ];
 
 
@@ -87,9 +87,9 @@ in rec {
 
 
 
-  lodepng_harness = pkgs.stdenv.mkDerivation {
+  miniz_harness = pkgs.stdenv.mkDerivation {
 
-    name = "lodepng_harness";
+    name = "miniz_harness";
     src  = ./lab_2/source;
 
     buildPhase = ''
@@ -98,13 +98,13 @@ in rec {
         -Og                                    \
         -g                                     \
         -fsanitize=address,undefined           \
-        -o lodepng_harness                     \
-        lodepng_harness.cpp
+        -o miniz_harness                       \
+        miniz_harness.cpp
     '';
 
     installPhase = ''
       mkdir -p $out
-      cp -r ./lodepng_harness $out
+      cp -r ./miniz_harness $out
     '';
 
   };
