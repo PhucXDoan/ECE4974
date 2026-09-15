@@ -22,7 +22,7 @@ in rec {
   default = pkgs.linkFarm "ECE4974" [
     { name = "pdftotext_asan";       path = pdftotext_asan;       }
     { name = "pdftotext_asan_ubsan"; path = pdftotext_asan_ubsan; }
-    { name = "tinyxml2_harness";     path = tinyxml2_harness;     }
+    { name = "lodepng_harness";      path = lodepng_harness;      }
   ];
 
 
@@ -81,6 +81,30 @@ in rec {
     installPhase = ''
       mkdir -p $out
       cp ./xpdf/pdftotext $out
+    '';
+
+  };
+
+
+
+  lodepng_harness = pkgs.stdenv.mkDerivation {
+
+    name = "lodepng_harness";
+    src  = ./lab_2/source;
+
+    buildPhase = ''
+      ${pkgs.aflplusplus}/bin/afl-clang-fast++ \
+        -w                                     \
+        -Og                                    \
+        -g                                     \
+        -fsanitize=address,undefined           \
+        -o lodepng_harness                     \
+        lodepng_harness.cpp
+    '';
+
+    installPhase = ''
+      mkdir -p $out
+      cp -r ./lodepng_harness $out
     '';
 
   };
