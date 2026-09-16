@@ -90,7 +90,7 @@ in rec {
   miniz_harness = pkgs.stdenv.mkDerivation {
 
     name = "miniz_harness";
-    src  = ./lab_2/source;
+    src  = ./lab_2/miniz_fuzzing/source;
 
     buildPhase = ''
       ${pkgs.aflplusplus}/bin/afl-clang-fast \
