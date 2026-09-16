@@ -93,13 +93,15 @@ in rec {
     src  = ./lab_2/source;
 
     buildPhase = ''
-      ${pkgs.aflplusplus}/bin/afl-clang-fast++ \
-        -w                                     \
-        -Og                                    \
-        -g                                     \
-        -fsanitize=address,undefined           \
-        -o miniz_harness                       \
-        miniz_harness.cpp
+      ${pkgs.aflplusplus}/bin/afl-clang-fast \
+        -w                                   \
+        -Og                                  \
+        -g                                   \
+        -fsanitize=address,undefined         \
+        -o miniz_harness                     \
+        -I .                                 \
+        -I ./miniz                           \
+        ./miniz_harness.c
     '';
 
     installPhase = ''

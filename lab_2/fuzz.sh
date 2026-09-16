@@ -3,4 +3,4 @@ afl-fuzz                \
     -o ./lab_2/out      \
     -s 123              \
     -m none             \
-    -- ./result/lodepng_harness/lodepng_harness @@
+    -- ./result/miniz_harness/miniz_harness @@
