@@ -22,6 +22,7 @@ in rec {
   default = pkgs.linkFarm "ECE4974" [
     { name = "pdftotext_asan";       path = pdftotext_asan;       }
     { name = "pdftotext_asan_ubsan"; path = pdftotext_asan_ubsan; }
+    { name = "miniz_harness";        path = miniz_harness;        }
   ];
 
 
@@ -80,6 +81,32 @@ in rec {
     installPhase = ''
       mkdir -p $out
       cp ./xpdf/pdftotext $out
+    '';
+
+  };
+
+
+
+  miniz_harness = pkgs.stdenv.mkDerivation {
+
+    name = "miniz_harness";
+    src  = ./lab_2/miniz_fuzzing/source;
+
+    buildPhase = ''
+      ${pkgs.aflplusplus}/bin/afl-clang-fast \
+        -w                                   \
+        -Og                                  \
+        -g                                   \
+        -fsanitize=address,undefined         \
+        -o miniz_harness                     \
+        -I .                                 \
+        -I ./miniz                           \
+        ./miniz_harness.c
+    '';
+
+    installPhase = ''
+      mkdir -p $out
+      cp -r ./miniz_harness $out
     '';
 
   };
