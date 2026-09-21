@@ -14,14 +14,8 @@ main(int argc, char** argv)
     unsigned char* file_data = {};
     {
 
-        if (argc <= 1)
-            return -1;
-
         char* file_path   = argv[1];
         FILE* file_handle = fopen(file_path, "rb");
-
-        if (!file_handle)
-            return -1;
 
         fseek(file_handle, 0, SEEK_END);
         file_size = ftell(file_handle);
@@ -29,13 +23,7 @@ main(int argc, char** argv)
 
         file_data = malloc(file_size);
 
-        if (!file_data)
-            return -1;
-
-        size_t fread_count = fread(file_data, file_size, 1, file_handle);
-
-        if (fread_count != 1)
-            return -1;
+        fread(file_data, file_size, 1, file_handle);
 
         fclose(file_handle);
 
