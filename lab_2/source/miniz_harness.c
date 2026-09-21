@@ -7,8 +7,6 @@ extern int
 main(int argc, char** argv)
 {
 
-    // Load file content.
-
     long           file_size = {};
     unsigned char* file_data = {};
     {
@@ -27,10 +25,6 @@ main(int argc, char** argv)
         fclose(file_handle);
 
     }
-
-
-
-    // Run some `miniz` procedures.
 
     mz_zip_archive zip = {};
     mz_zip_zero_struct(&zip);
