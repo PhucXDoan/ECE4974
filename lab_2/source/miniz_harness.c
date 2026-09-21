@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "miniz.c"
 #include "miniz_zip.c"
 #include "miniz_tinfl.c"
