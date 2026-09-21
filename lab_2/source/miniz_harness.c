@@ -8,52 +8,48 @@ extern int
 main(int argc, char** argv)
 {
 
-    if (argc <= 1)
+    // Load file content.
+
+    long           file_size = {};
+    unsigned char* file_data = {};
     {
-        printf("No arguments.\n");
-        return -1;
+
+        if (argc <= 1)
+            return -1;
+
+        char* file_path   = argv[1];
+        FILE* file_handle = fopen(file_path, "rb");
+
+        if (!file_handle)
+            return -1;
+
+        fseek(file_handle, 0, SEEK_END);
+        file_size = ftell(file_handle);
+        fseek(file_handle, 0, SEEK_SET);
+
+        file_data = malloc(file_size);
+
+        if (!file_data)
+            return -1;
+
+        size_t fread_count = fread(file_data, file_size, 1, file_handle);
+
+        if (fread_count != 1)
+            return -1;
+
+        fclose(file_handle);
+
     }
 
-    char* file_path   = argv[1];
-    FILE* file_handle = fopen(file_path, "rb");
-
-    if (!file_handle)
-    {
-        printf("Couldn't open `%s`.\n", file_path);
-        return -1;
-    }
-
-    fseek(file_handle, 0, SEEK_END);
-    long file_size = ftell(file_handle);
-    fseek(file_handle, 0, SEEK_SET);
 
 
-
-    unsigned char* file_content = malloc(file_size);
-
-    if (!file_content)
-    {
-        printf("Couldn't allocate.\n");
-        return -1;
-    }
-
-    size_t fread_count = fread(file_content, file_size, 1, file_handle);
-
-    if (fread_count != 1)
-    {
-        printf("Couldn't read.\n");
-        return -1;
-    }
-
-    fclose(file_handle);
+    // Run some `miniz` procedures.
 
     mz_zip_archive zip = {};
     mz_zip_zero_struct(&zip);
-    mz_zip_reader_init_mem(&zip, file_content, file_size, 0);
+    mz_zip_reader_init_mem(&zip, file_data, file_size, 0);
     mz_zip_reader_end(&zip);
 
-    free(file_content);
-
-    printf("Done.\n");
+    free(file_data);
 
 }
