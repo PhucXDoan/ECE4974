@@ -1,0 +1,10 @@
+Script started on 2026-09-21 15:06:54+00:00 [COMMAND="./lab_2/build.sh 2>&1" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="211" LINES="55"]
+[0;36mafl-cc++4.35c[0m by Michal Zalewski, Laszlo Szekeres, Marc Heuse - mode: LLVM-PCGUARD
+[1m./lab_2/source/miniz_harness.c:26:9: [0m[0;1;35mwarning: [0m[1mignoring return value of function declared with 'warn_unused_result' attribute [-Wunused-result][0m
+   26 |         fread(file_data, file_size, [0;32m1[0m, file_handle);[0m
+      | [0;1;32m        ^~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[0;36mSanitizerCoveragePCGUARD++4.35c[0m
+[1;92m[+] [0mInstrumented 6711 locations with no collisions (non-hardened mode) of which are 343 handled and 0 unhandled special instructions. 53 instrumentations saved.[0m
+1 warning generated.
+
+Script done on 2026-09-21 15:07:00+00:00 [COMMAND_EXIT_CODE="0"]

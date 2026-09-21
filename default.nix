@@ -94,7 +94,6 @@ in rec {
 
     buildPhase = ''
       ${pkgs.aflplusplus}/bin/afl-clang-fast \
-        -w                                   \
         -Og                                  \
         -g                                   \
         -fsanitize=address,undefined         \
