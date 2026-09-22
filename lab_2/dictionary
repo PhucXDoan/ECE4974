@@ -1,0 +1,6 @@
+header_local="\x50\x4b\x03\x04"
+header_central="\x50\x4b\x01\x02"
+header_end="\x50\x4b\x05\x06"
+data_descriptor="\x50\x4b\x07\x08"
+method_store="\x00\x00"
+method_deflate="\x08\x00"

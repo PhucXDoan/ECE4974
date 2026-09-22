@@ -1,29 +1,28 @@
-Script started on 2026-09-21 16:35:44+00:00 [COMMAND="afl-tmin -i ./lab_2/out/default/crashes/id\:000000\,sig\:04\,src\:000004\,time\:600226\,execs\:322899\,op\:havoc\,rep\:59 -o ./lab_2/crashes/minimized -m none -- ./result/miniz_harness/miniz_harness @@" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="211" LINES="55"]
+Script started on 2026-09-22 23:33:58+00:00 [COMMAND="afl-tmin -i "./lab_2/out/default/crashes/id:000001,sig:04,src:000036,time:161585,execs:85215,op:havoc,rep:15" -o ./lab_2/crashes/minimized_1 -m none -- ./result/miniz_harness/miniz_harness @@" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="211" LINES="55"]
 [0;36mafl-tmin++4.35c[0m by Michal Zalewski
 
-[1;92m[+] [0mRead 25006 bytes from './lab_2/out/default/crashes/id:000000,sig:04,src:000004,time:600226,execs:322899,op:havoc,rep:59'.[0m
+[1;92m[+] [0mRead 9426 bytes from './lab_2/out/default/crashes/id:000001,sig:04,src:000036,time:161585,execs:85215,op:havoc,rep:15'.[0m
 [1;94m[*] [0mSpinning up the fork server...[0m
 [1;92m[+] [0mAll right - new fork server model v1 is up.[0m
 [1;94m[*] [0mTarget map size: 6931[0m
 [1;94m[*] [0mPerforming dry run (mem limit = 0 MB, timeout = 1000 ms)...[0m
 [1;92m[+] [0mProgram exits with a signal, minimizing in [0;35mcrash[0m mode.[0m
 [1;94m[*] [0m[1;97mStage #0: [0mOne-time block normalization...[0m
-[1;92m[+] [0mBlock normalization complete, 25006 bytes replaced.[0m
+[1;92m[+] [0mBlock normalization complete, 9426 bytes replaced.[0m
 [1;94m[*] [0m[1;93m--- [1;97mPass #1 [1;93m---[0m
 [1;94m[*] [0m[1;97mStage #1: [0mRemoving blocks of data...[0m
-[1;90m    Block length = 2048, remaining size = 25006
-[0m[1;90m    Block length = 1024, remaining size = 4526
-[0m[1;90m    Block length = 512, remaining size = 4526
-[0m[1;90m    Block length = 256, remaining size = 4526
-[0m[1;90m    Block length = 128, remaining size = 4270
-[0m[1;90m    Block length = 64, remaining size = 4142
-[0m[1;90m    Block length = 32, remaining size = 4142
-[0m[1;90m    Block length = 16, remaining size = 4110
-[0m[1;90m    Block length = 8, remaining size = 4110
-[0m[1;90m    Block length = 4, remaining size = 4102
+[1;90m    Block length = 1024, remaining size = 9426
+[0m[1;90m    Block length = 512, remaining size = 4306
+[0m[1;90m    Block length = 256, remaining size = 4306
+[0m[1;90m    Block length = 128, remaining size = 4306
+[0m[1;90m    Block length = 64, remaining size = 4178
+[0m[1;90m    Block length = 32, remaining size = 4114
+[0m[1;90m    Block length = 16, remaining size = 4114
+[0m[1;90m    Block length = 8, remaining size = 4098
+[0m[1;90m    Block length = 4, remaining size = 4098
 [0m[1;90m    Block length = 2, remaining size = 4098
 [0m[1;90m    Block length = 1, remaining size = 4098
-[0m[1;92m[+] [0mBlock removal complete, 20909 bytes deleted.[0m
+[0m[1;92m[+] [0mBlock removal complete, 5329 bytes deleted.[0m
 [1;94m[*] [0m[1;97mStage #2: [0mMinimizing symbols (1 code point)...[0m
 [1;92m[+] [0mSymbol minimization finished, 0 symbols (0 bytes) replaced.[0m
 [1;94m[*] [0m[1;97mStage #3: [0mCharacter minimization...[0m
@@ -41,13 +40,13 @@ Script started on 2026-09-21 16:35:44+00:00 [COMMAND="afl-tmin -i ./lab_2/out/de
 [0m[1;90m    Block length = 1, remaining size = 4097
 [0m[1;92m[+] [0mBlock removal complete, 0 bytes deleted.[0m
 
-[1;90m     File size reduced by : [0m83.62% (to 4097 bytes)
-[1;90m    Characters simplified : [0m610.35%
-[1;90m     Number of execs done : [0m157
-[1;90m          Fruitless execs : [0mpath=42 crash=0 hang=0
+[1;90m     File size reduced by : [0m56.54% (to 4097 bytes)
+[1;90m    Characters simplified : [0m230.07%
+[1;90m     Number of execs done : [0m124
+[1;90m          Fruitless execs : [0mpath=40 crash=0 hang=0
 
-[1;94m[*] [0mWriting output to './lab_2/crashes/minimized'...[0m
+[1;94m[*] [0mWriting output to './lab_2/crashes/minimized_1'...[0m
 [1;92m[+] [0mWe're done here. Have a nice day!
 [0m
 
-Script done on 2026-09-21 16:35:45+00:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2026-09-22 23:33:58+00:00 [COMMAND_EXIT_CODE="0"]

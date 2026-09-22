@@ -1,0 +1,52 @@
+Script started on 2026-09-22 23:34:06+00:00 [COMMAND="afl-tmin -i "./lab_2/out/default/crashes/id:000000,sig:04,src:000005,time:16487,execs:9132,op:inf,rep:2" -o ./lab_2/crashes/minimized_0 -m none -- ./result/miniz_harness/miniz_harness @@" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="211" LINES="55"]
+[0;36mafl-tmin++4.35c[0m by Michal Zalewski
+
+[1;92m[+] [0mRead 9411 bytes from './lab_2/out/default/crashes/id:000000,sig:04,src:000005,time:16487,execs:9132,op:inf,rep:2'.[0m
+[1;94m[*] [0mSpinning up the fork server...[0m
+[1;92m[+] [0mAll right - new fork server model v1 is up.[0m
+[1;94m[*] [0mTarget map size: 6931[0m
+[1;94m[*] [0mPerforming dry run (mem limit = 0 MB, timeout = 1000 ms)...[0m
+[1;92m[+] [0mProgram exits with a signal, minimizing in [0;35mcrash[0m mode.[0m
+[1;94m[*] [0m[1;97mStage #0: [0mOne-time block normalization...[0m
+[1;92m[+] [0mBlock normalization complete, 9411 bytes replaced.[0m
+[1;94m[*] [0m[1;93m--- [1;97mPass #1 [1;93m---[0m
+[1;94m[*] [0m[1;97mStage #1: [0mRemoving blocks of data...[0m
+[1;90m    Block length = 1024, remaining size = 9411
+[0m[1;90m    Block length = 512, remaining size = 4291
+[0m[1;90m    Block length = 256, remaining size = 4291
+[0m[1;90m    Block length = 128, remaining size = 4291
+[0m[1;90m    Block length = 64, remaining size = 4163
+[0m[1;90m    Block length = 32, remaining size = 4099
+[0m[1;90m    Block length = 16, remaining size = 4099
+[0m[1;90m    Block length = 8, remaining size = 4099
+[0m[1;90m    Block length = 4, remaining size = 4099
+[0m[1;90m    Block length = 2, remaining size = 4099
+[0m[1;90m    Block length = 1, remaining size = 4097
+[0m[1;92m[+] [0mBlock removal complete, 5314 bytes deleted.[0m
+[1;94m[*] [0m[1;97mStage #2: [0mMinimizing symbols (1 code point)...[0m
+[1;92m[+] [0mSymbol minimization finished, 0 symbols (0 bytes) replaced.[0m
+[1;94m[*] [0m[1;97mStage #3: [0mCharacter minimization...[0m
+[1;92m[+] [0mCharacter minimization done, 0 bytes replaced.[0m
+[1;94m[*] [0m[1;93m--- [1;97mPass #2 [1;93m---[0m
+[1;94m[*] [0m[1;97mStage #1: [0mRemoving blocks of data...[0m
+[1;90m    Block length = 256, remaining size = 4097
+[0m[1;90m    Block length = 128, remaining size = 4097
+[0m[1;90m    Block length = 64, remaining size = 4097
+[0m[1;90m    Block length = 32, remaining size = 4097
+[0m[1;90m    Block length = 16, remaining size = 4097
+[0m[1;90m    Block length = 8, remaining size = 4097
+[0m[1;90m    Block length = 4, remaining size = 4097
+[0m[1;90m    Block length = 2, remaining size = 4097
+[0m[1;90m    Block length = 1, remaining size = 4097
+[0m[1;92m[+] [0mBlock removal complete, 0 bytes deleted.[0m
+
+[1;90m     File size reduced by : [0m56.47% (to 4097 bytes)
+[1;90m    Characters simplified : [0m229.70%
+[1;90m     Number of execs done : [0m123
+[1;90m          Fruitless execs : [0mpath=40 crash=0 hang=0
+
+[1;94m[*] [0mWriting output to './lab_2/crashes/minimized_0'...[0m
+[1;92m[+] [0mWe're done here. Have a nice day!
+[0m
+
+Script done on 2026-09-22 23:34:06+00:00 [COMMAND_EXIT_CODE="0"]
