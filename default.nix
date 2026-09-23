@@ -7,13 +7,24 @@ let
     system = "x86_64-linux";
   };
 
+  aflplusplus = pkgs.aflplusplus.overrideAttrs (old: rec {
+    version  = "5.03c";
+    src      = pkgs.fetchFromGitHub {
+      owner  = "AFLplusplus";
+      repo   = "AFLplusplus";
+      tag    = "v${version}";
+      sha256 = "kQ4f/4F3nlPp0wxG7HE3QSJvQYbfRy0BfYJMVGg1o4w=";
+    };
+    doInstallCheck = false;
+  });
+
 in rec {
 
 
 
   devShell = pkgs.mkShell {
     buildInputs = [
-      pkgs.aflplusplus
+      aflplusplus
     ];
   };
 
@@ -39,8 +50,8 @@ in rec {
 
     # Environmental variables.
 
-    CC       = "${pkgs.aflplusplus}/bin/afl-clang-fast";
-    CXX      = "${pkgs.aflplusplus}/bin/afl-clang-fast++";
+    CC       = "${aflplusplus}/bin/afl-clang-fast";
+    CXX      = "${aflplusplus}/bin/afl-clang-fast++";
     CFLAGS   = "-w -Og -fsanitize=address";
     CXXFLAGS = "-w -Og -fsanitize=address";
 
@@ -69,8 +80,8 @@ in rec {
 
     # Environmental variables.
 
-    CC       = "${pkgs.aflplusplus}/bin/afl-clang-fast";
-    CXX      = "${pkgs.aflplusplus}/bin/afl-clang-fast++";
+    CC       = "${aflplusplus}/bin/afl-clang-fast";
+    CXX      = "${aflplusplus}/bin/afl-clang-fast++";
     CFLAGS   = "-w -Og -fsanitize=address,undefined";
     CXXFLAGS = "-w -Og -fsanitize=address,undefined";
 
@@ -93,13 +104,13 @@ in rec {
     src  = ./lab_2/source;
 
     buildPhase = ''
-      ${pkgs.aflplusplus}/bin/afl-clang-fast \
-        -Og                                  \
-        -g                                   \
-        -fsanitize=address,undefined         \
-        -o miniz_harness                     \
-        -I .                                 \
-        -I ./miniz                           \
+      ${aflplusplus}/bin/afl-clang-fast \
+        -Og                             \
+        -g                              \
+        -fsanitize=address,undefined    \
+        -o miniz_harness                \
+        -I .                            \
+        -I ./miniz                      \
         ./miniz_harness.c
     '';
 
