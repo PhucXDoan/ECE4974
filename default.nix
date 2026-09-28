@@ -25,6 +25,7 @@ in rec {
   devShell = pkgs.mkShell {
     buildInputs = [
       aflplusplus
+      pkgs.gdb
     ];
   };
 
