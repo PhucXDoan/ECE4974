@@ -26,6 +26,7 @@ in rec {
     buildInputs = [
       aflplusplus
       pkgs.gdb
+      pkgs.llvmPackages.llvm
     ];
   };
 
