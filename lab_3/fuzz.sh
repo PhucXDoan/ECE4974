@@ -1,7 +1,7 @@
 afl-fuzz                  \
-    -i ./lab_2/examples   \
-    -o ./lab_2/out        \
+    -i ./lab_3/examples   \
+    -o ./lab_3/out        \
     -s 123                \
     -m none               \
-    -x ./lab_2/dictionary \
-    -- ./result/miniz_harness/miniz_harness @@
+    -x ./lab_3/dictionary \
+    -- ./result/lab_3_miniz_harness/miniz_harness @@
