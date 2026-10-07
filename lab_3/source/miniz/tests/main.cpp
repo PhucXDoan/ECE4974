@@ -3,11 +3,102 @@
 #include "miniz_zip.h"
 #include <assert.h>
 #include <string>
+#include <vector>
 
 #ifdef _WIN32
 #define unlink _unlink
 #else
 #include <unistd.h>
+#endif /* _WIN32 */
+
+#ifndef MINIZ_NO_ARCHIVE_WRITING_APIS
+struct short_write_context
+{
+    bool rejected_data_descriptor = false;
+};
+
+static size_t reject_data_descriptor(void *opaque, mz_uint64 file_ofs, const void *buffer, size_t size)
+{
+    auto *context = static_cast<short_write_context *>(opaque);
+    const auto *bytes = static_cast<const mz_uint8 *>(buffer);
+    (void)file_ofs;
+
+    if ((size == 16) && (bytes[0] == 0x50) && (bytes[1] == 0x4b) && (bytes[2] == 0x07) && (bytes[3] == 0x08))
+    {
+        context->rejected_data_descriptor = true;
+        return size - 1;
+    }
+
+    return size;
+}
+
+struct read_context
+{
+    const mz_uint8 *data;
+    size_t size;
+};
+
+static size_t read_data(void *opaque, mz_uint64 file_ofs, void *buffer, size_t size)
+{
+    const auto *context = static_cast<const read_context *>(opaque);
+    size_t offset = static_cast<size_t>(file_ofs);
+    size_t remaining;
+
+    if (offset >= context->size)
+        return 0;
+
+    remaining = context->size - offset;
+    if (size > remaining)
+        size = remaining;
+    memcpy(buffer, context->data + offset, size);
+    return size;
+}
+
+TEST_CASE("ZIP writer reports data descriptor write failures")
+{
+    const mz_uint8 contents[] = "contents";
+
+    SECTION("memory input")
+    {
+        mz_zip_archive zip = {};
+        short_write_context write_context;
+        zip.m_pWrite = reject_data_descriptor;
+        zip.m_pIO_opaque = &write_context;
+        REQUIRE(mz_zip_writer_init(&zip, 0));
+
+        mz_bool result = mz_zip_writer_add_mem(&zip, "memory.txt", contents, sizeof(contents) - 1, MZ_DEFAULT_COMPRESSION);
+        mz_zip_error error = mz_zip_get_last_error(&zip);
+        mz_bool end_result = mz_zip_writer_end(&zip);
+
+        REQUIRE_FALSE(result);
+        REQUIRE(write_context.rejected_data_descriptor);
+        INFO("last error: " << static_cast<int>(error));
+        REQUIRE(error == MZ_ZIP_FILE_WRITE_FAILED);
+        REQUIRE(end_result);
+    }
+
+    SECTION("read callback input")
+    {
+        mz_zip_archive zip = {};
+        short_write_context write_context;
+        read_context input = {contents, sizeof(contents) - 1};
+        zip.m_pWrite = reject_data_descriptor;
+        zip.m_pIO_opaque = &write_context;
+        REQUIRE(mz_zip_writer_init(&zip, 0));
+
+        mz_bool result = mz_zip_writer_add_read_buf_callback(&zip, "callback.txt", read_data, &input, input.size,
+                                                              nullptr, nullptr, 0, MZ_DEFAULT_COMPRESSION,
+                                                              nullptr, 0, nullptr, 0);
+        mz_zip_error error = mz_zip_get_last_error(&zip);
+        mz_bool end_result = mz_zip_writer_end(&zip);
+
+        REQUIRE_FALSE(result);
+        REQUIRE(write_context.rejected_data_descriptor);
+        INFO("last error: " << static_cast<int>(error));
+        REQUIRE(error == MZ_ZIP_FILE_WRITE_FAILED);
+        REQUIRE(end_result);
+    }
+}
 #endif
 
 #ifndef MINIZ_NO_STDIO
@@ -134,9 +225,19 @@ TEST_CASE("Zip reader tests")
         REQUIRE(!b);
         REQUIRE(zip_archive.m_last_error == MZ_ZIP_INVALID_HEADER_OR_CORRUPTED);
     }
+
+    SECTION("Test malformed archive scan does not underflow")
+    {
+        std::vector<unsigned char> data(4097, 'A');
+        mz_zip_archive zip_archive = {};
+
+        auto b = mz_zip_reader_init_mem(&zip_archive, data.data(), data.size(), 0);
+        REQUIRE(!b);
+        REQUIRE(zip_archive.m_last_error == MZ_ZIP_FAILED_FINDING_CENTRAL_DIR);
+    }
 }
 
-#endif
+#endif /* MINIZ_NO_STDIO */
 
 TEST_CASE("Tinfl / tdefl tests")
 {
