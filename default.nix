@@ -132,13 +132,13 @@ in rec {
     src  = ./lab_3/source;
 
     buildPhase = ''
-      ${aflplusplus}/bin/afl-clang-fast     \
-        -Og                                 \
-        -g                                  \
-        -fsanitize=fuzzer,address,undefined \
-        -o miniz_harness                    \
-        -I .                                \
-        -I ./miniz                          \
+      ${aflplusplus}/bin/afl-clang-fast \
+        -Og                             \
+        -g                              \
+        -fsanitize=address,undefined    \
+        -o miniz_harness                \
+        -I .                            \
+        -I ./miniz                      \
         ./miniz_harness.c
     '';
 

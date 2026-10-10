@@ -1,41 +1,63 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
 #include "miniz.c"
 #include "miniz_zip.c"
 #include "miniz_tinfl.c"
 #include "miniz_tdef.c"
 
-int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
-    mz_zip_archive zip;
+extern int
+main(int argc, char** argv)
+{
+
+    long           input_size = {};
+    unsigned char* input_data = {};
+    {
+
+        char* input_path   = argv[1];
+        FILE* input_handle = fopen(input_path, "rb");
+
+        fseek(input_handle, 0, SEEK_END);
+        input_size = ftell(input_handle);
+        fseek(input_handle, 0, SEEK_SET);
+
+        input_data = malloc(input_size);
+
+        fread(input_data, input_size, 1, input_handle);
+
+        fclose(input_handle);
+
+    }
+
+    mz_zip_archive zip = {};
     mz_zip_zero_struct(&zip);
 
-    if (!mz_zip_reader_init_mem(&zip, data, size, 0))
+    if (!mz_zip_reader_init_mem(&zip, input_data, input_size, 0))
+    {
         return 0;
+    }
 
-    mz_uint n = mz_zip_reader_get_num_files(&zip);
+    mz_uint file_count = mz_zip_reader_get_num_files(&zip);
 
+    for (mz_uint file_index = 0; file_index < file_count; file_index += 1)
+    {
 
+        mz_zip_archive_file_stat file_stat = {};
 
+        if (mz_zip_reader_file_stat(&zip, file_index, &file_stat))
+        {
 
-    for (mz_uint i = 0; i < n; i++) {
-        mz_zip_archive_file_stat st;
+            size_t out_size = {};
+            void*  out      = mz_zip_reader_extract_to_heap(&zip, file_index, &out_size, 0);
+            free(out);
 
-        if (mz_zip_reader_file_stat(&zip, i, &st)) {
-            size_t out_size = 0;
-            void *out = mz_zip_reader_extract_to_heap(&zip, i, &out_size, 0);
-            free(out);  // safe when out == NULL
+            mz_zip_reader_locate_file(&zip, file_stat.m_filename, NULL, 0);
 
-            (void)mz_zip_reader_locate_file(&zip, st.m_filename, NULL, 0);
         }
 
-        int idx = mz_zip_reader_locate_file(
-            &zip, st.m_filename, NULL, 0);
-        (void)idx;
+        int file_location = mz_zip_reader_locate_file(&zip, file_stat.m_filename, NULL, 0);
+
     }
 
     mz_zip_reader_end(&zip);
+
     return 0;
+
 }
