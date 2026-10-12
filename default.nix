@@ -33,10 +33,10 @@ in rec {
 
 
   default = pkgs.linkFarm "ECE4974" [
-    { name = "pdftotext_asan";       path = pdftotext_asan;       }
-    { name = "pdftotext_asan_ubsan"; path = pdftotext_asan_ubsan; }
-    { name = "miniz_harness";        path = miniz_harness;        }
-    { name = "lab_3_miniz_harness";  path = lab_3_miniz_harness;  }
+    { name = "pdftotext_asan";        path = pdftotext_asan;        }
+    { name = "pdftotext_asan_ubsan";  path = pdftotext_asan_ubsan;  }
+    { name = "miniz_harness";         path = miniz_harness;         }
+    { name = "lab_3_miniz_harnesses"; path = lab_3_miniz_harnesses; }
   ];
 
 
@@ -126,25 +126,61 @@ in rec {
 
 
 
-  lab_3_miniz_harness = pkgs.stdenv.mkDerivation {
+  lab_3_miniz_harnesses = pkgs.stdenv.mkDerivation {
 
-    name = "miniz_harness";
+    name = "miniz_harnesses";
     src  = ./lab_3/source;
 
     buildPhase = ''
+
       ${aflplusplus}/bin/afl-clang-fast \
-        -Og                             \
+        -O2                             \
         -g                              \
         -fsanitize=address,undefined    \
-        -o miniz_harness                \
+        -o miniz_harness_0              \
+        -D MODE=0                       \
         -I .                            \
         -I ./miniz                      \
         ./miniz_harness.c
+
+      ${aflplusplus}/bin/afl-clang-fast \
+        -O2                             \
+        -g                              \
+        -fsanitize=address,undefined    \
+        -o miniz_harness_1              \
+        -D MODE=1                       \
+        -I .                            \
+        -I ./miniz                      \
+        ./miniz_harness.c
+
+      ${aflplusplus}/bin/afl-clang-fast     \
+        -O2                                 \
+        -g                                  \
+        -fsanitize=fuzzer,address,undefined \
+        -o miniz_harness_2                  \
+        -D MODE=2                           \
+        -I .                                \
+        -I ./miniz                          \
+        ./miniz_harness.c
+
+      AFL_LLVM_LAF_ALL=1 ${aflplusplus}/bin/afl-clang-fast \
+        -O2                                                \
+        -g                                                 \
+        -fsanitize=fuzzer,address,undefined                \
+        -o miniz_harness_3                                 \
+        -D MODE=3                                          \
+        -I .                                               \
+        -I ./miniz                                         \
+        ./miniz_harness.c
+
     '';
 
     installPhase = ''
       mkdir -p $out
-      cp -r ./miniz_harness $out
+      cp -r ./miniz_harness_0 $out
+      cp -r ./miniz_harness_1 $out
+      cp -r ./miniz_harness_2 $out
+      cp -r ./miniz_harness_3 $out
     '';
 
   };
