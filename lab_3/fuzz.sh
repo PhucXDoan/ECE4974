@@ -46,4 +46,17 @@ case "$1" in
             -- ./result/lab_3_miniz_harnesses/miniz_harness_3 @@
         ;;
 
+    4)
+        afl-fuzz                                                     \
+            -i ./lab_3/go-fuzz-corpus/zip/corpus                     \
+            -o ./lab_3/out/4                                         \
+            -s 123                                                   \
+            -m none                                                  \
+            -V 43200                                                 \
+            -c ./result/lab_3_miniz_harnesses/miniz_harness_4.cmplog \
+            -l 2AT                                                   \
+            -x ./lab_3/dictionary                                    \
+            -- ./result/lab_3_miniz_harnesses/miniz_harness_4 @@
+        ;;
+
 esac

@@ -173,14 +173,31 @@ in rec {
         -I ./miniz                                         \
         ./miniz_harness.c
 
+      AFL_LLVM_CMPLOG=1 ${aflplusplus}/bin/afl-clang-fast \
+        -O2                                               \
+        -g                                                \
+        -fsanitize=fuzzer,address,undefined               \
+        -o miniz_harness_4.cmplog                         \
+        -D MODE=4                                         \
+        -I .                                              \
+        -I ./miniz                                        \
+        ./miniz_harness.c
+
+      ${aflplusplus}/bin/afl-clang-fast                   \
+        -O2                                               \
+        -g                                                \
+        -fsanitize=fuzzer,address,undefined               \
+        -o miniz_harness_4                                \
+        -D MODE=4                                         \
+        -I .                                              \
+        -I ./miniz                                        \
+        ./miniz_harness.c
+
     '';
 
     installPhase = ''
       mkdir -p $out
-      cp -r ./miniz_harness_0 $out
-      cp -r ./miniz_harness_1 $out
-      cp -r ./miniz_harness_2 $out
-      cp -r ./miniz_harness_3 $out
+      cp -r ./miniz_harness_* $out
     '';
 
   };

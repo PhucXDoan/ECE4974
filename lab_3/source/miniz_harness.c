@@ -112,7 +112,7 @@ run
 
     }
 
-#elif MODE == 2 || MODE == 3
+#elif MODE == 2 || MODE == 3 || MODE == 4
 
     extern int
     LLVMFuzzerTestOneInput(const uint8_t* input_data, size_t input_size)
