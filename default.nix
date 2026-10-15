@@ -27,6 +27,8 @@ in rec {
       aflplusplus
       pkgs.gdb
       pkgs.llvmPackages.llvm
+      pkgs.python2
+      pkgs.lcov
     ];
   };
 
