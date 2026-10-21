@@ -207,7 +207,7 @@ async def generate_report(args: argparse.Namespace, input_file: pathlib.Path):
         args.genhtml_path,
         "--prefix",
         str(args.code_dir),
-        "--highlight",
+        # NOTE: Causes problems because the tool no longer supports this: "--highlight",
         "--ignore-errors",
         "source",
         "--legend",
