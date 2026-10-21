@@ -158,7 +158,7 @@ run
 
             input_data = malloc(input_size);
 
-            (void) fread(input_data, input_size, 1, input_handle);
+            int _ = fread(input_data, input_size, 1, input_handle);
 
             fclose(input_handle);
 

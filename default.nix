@@ -30,6 +30,7 @@ in rec {
       pkgs.python3
       (pkgs.python3.withPackages (ps: [
         ps.pyte
+        ps.tqdm
       ]))
       pkgs.lcov
     ];
