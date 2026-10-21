@@ -27,7 +27,6 @@ in rec {
       aflplusplus
       pkgs.gdb
       pkgs.llvmPackages.llvm
-      pkgs.python2
       pkgs.python3
       (pkgs.python3.withPackages (ps: [
         ps.pyte
