@@ -31,6 +31,7 @@ in rec {
       (pkgs.python3.withPackages (ps: [
         ps.pyte
         ps.tqdm
+        ps.matplotlib
       ]))
       pkgs.lcov
     ];
