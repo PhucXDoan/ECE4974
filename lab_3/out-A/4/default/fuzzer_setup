@@ -1,0 +1,6 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=result/lab_3_miniz_harnesses/miniz_harness_4
+AFL_CUSTOM_INFO_PROGRAM_ARGV=@@
+AFL_CUSTOM_INFO_OUT=lab_3/out/4/default
+# command line:
+'afl-fuzz' '-i' './lab_3/corpus_minimized' '-o' 'lab_3/out/4' '-s' '123' '-m' 'none' '-x' './lab_3/dictionary' '-c' 'result/lab_3_miniz_harnesses/miniz_harness_4.cmplog' '-l' '2AT' '--' 'result/lab_3_miniz_harnesses/miniz_harness_4' '@@'

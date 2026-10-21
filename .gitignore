@@ -2,3 +2,12 @@ build/
 out/
 in/
 result
+
+miniz_harness_coverage*
+cov/
+lab_3/**/default/.synced/
+lab_3/**/default/crashes/README.txt
+lab_3/**/default/hangs/
+lab_3/**/default/cmdline
+lab_3/**/default/fastresume.bin
+lab_3/**/default/target_hash

@@ -1,6 +1,8 @@
 #! /usr/bin/env python3
 
+import math
 import pathlib
+import matplotlib.lines
 import matplotlib.pyplot
 import dataclasses
 import typing
@@ -43,58 +45,123 @@ class Entry:
         self.total_crashes = int  (self.total_crashes)
         self.servers_count = int  (self.servers_count)
 
-mode_entries = [
-    [
+
+
+MODES   = range(2, 5)
+STRIDE  = 16
+COLUMNS = 2
+PLOTS = [
+    ('total_execs'  , 'Total Executions' ),
+    ('edges_found'  , 'Edges Found'      ),
+    ('corpus_count' , 'Corpus Count'     ),
+    ('cycles_done'  , 'Cycles Done'      ),
+    ('pending_total', 'Pending Total'    ),
+    ('pending_favs' , 'Pending Favorites'),
+]
+
+CRASH_FIELD  = 'saved_crashes'
+CRASH_MARKER = 'x'
+CRASH_SIZE   = 9
+
+
+
+mode_entries = {
+    mode : [
         Entry(*line.split(', '))
-        for line in pathlib.Path(f'./lab_3/out/{mode}/default/plot_data').read_text().splitlines()[1:]
+        for line in pathlib.Path(f'./../oct-20th-out/{mode}/default/plot_data').read_text().splitlines()[1:]
+        #for line in pathlib.Path(f'./../36f5a1934b603bbfa8f0a08abc79ab9f5d389d0f-out/{mode}/default/plot_data').read_text().splitlines()[1:]
+        #for line in pathlib.Path(f'./lab_3/out/{mode}/default/plot_data').read_text().splitlines()[1:]
     ]
     for mode in range(5)
-]
+}
 
 
 
-mode_datapoints = [
-    sorted([
+def get_datapoints(mode, field):
+    return sorted([
         (
             entry.relative_time / 60 / 60,
-            entry.total_execs,
-            #entry.corpus_count,
+            #entry.total_execs,
+            getattr(entry, field),
         )
-        for entry in entries[0::64]
+        for entry in mode_entries[mode][0::STRIDE]
     ])
-    for entries in mode_entries
-]
 
 
 
-for mode, _ in enumerate(mode_entries):
-    matplotlib.pyplot.plot(
-        [x for x, y in mode_datapoints[mode]],
-        [y for x, y in mode_datapoints[mode]],
-        label = f'{mode}',
-    )
+def get_crash_datapoints(mode, field):
 
-matplotlib.pyplot.title(
-    'TMP',
-    fontsize   = 14,
-    fontweight = 'bold',
+    datapoints = []
+    previous   = 0
+
+    for entry in mode_entries[mode]:
+        current = getattr(entry, CRASH_FIELD)
+        if current > previous:
+            datapoints.append((
+                entry.relative_time / 60 / 60,
+                #entry.total_execs,
+                getattr(entry, field),
+            ))
+        previous = current
+
+    return sorted(datapoints)
+
+
+
+rows = math.ceil(len(PLOTS) / COLUMNS)
+
+figure, axes = matplotlib.pyplot.subplots(
+    rows,
+    COLUMNS,
+    figsize     = (7 * COLUMNS, 4 * rows),
+    squeeze     = False,
+    sharex      = True,
+    constrained_layout = True,
 )
 
-matplotlib.pyplot.xlabel(
-    'TMP',
-    fontsize = 12,
+flat_axes = axes.flatten()
+
+crash_handle = matplotlib.lines.Line2D(
+    [], [],
+    marker    = CRASH_MARKER,
+    markersize = CRASH_SIZE,
+    linestyle = '',
+    color     = 'black',
+    label     = 'New crash',
 )
 
-matplotlib.pyplot.ylabel(
-    'TMP',
-    fontsize = 12,
-)
+for axis, (field, label) in zip(flat_axes, PLOTS):
 
-matplotlib.pyplot.grid(
-    True,
-    linestyle = ':',
-    alpha     = 0.6,
-)
+    for mode in MODES:
+        datapoints = get_datapoints(mode, field)
+        line, = axis.plot(
+            [x for x, y in datapoints],
+            [y for x, y in datapoints],
+            label = f'Mode {mode}',
+        )
 
-matplotlib.pyplot.legend()
+        crash_datapoints = get_crash_datapoints(mode, field)
+        axis.plot(
+            [x for x, y in crash_datapoints],
+            [y for x, y in crash_datapoints],
+            linestyle       = '',
+            marker          = CRASH_MARKER,
+            markersize      = CRASH_SIZE,
+            markeredgewidth = 2,
+            color           = line.get_color(),
+            zorder          = 3,
+        )
+
+    axis.set_title(label)
+    axis.set_xlabel('Run Time (Hours)', fontsize = 12)
+    #axis.set_xlabel('Total Executions', fontsize = 12)
+    axis.set_ylabel(label             , fontsize = 12)
+    axis.grid(True, linestyle = ':', alpha = 0.6)
+
+    handles, labels = axis.get_legend_handles_labels()
+    axis.legend(handles + [crash_handle], labels + ['New crash'])
+
+for axis in flat_axes[len(PLOTS):]:
+    axis.set_visible(False)
+
 matplotlib.pyplot.show()
