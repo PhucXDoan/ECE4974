@@ -18,7 +18,7 @@ for out in ('A', 'B', 'C'):
             subprocess.run([
                 'afl-tmin',
                 '-i', item,
-                '-o', f'./lab_3/minimized_crashes/out-{out}_mode-{mode}_id-{int(item.stem.split(',')[0].removeprefix('id:'))}',
+                '-o', f'./lab_3/crashes_minimized/out-{out}_mode-{mode}_id-{int(item.stem.split(',')[0].removeprefix('id:'))}',
                 '-m', 'none',
                 '--', f'./result/lab_3_miniz_harnesses/miniz_harness_{mode}', '@@'
             ])
