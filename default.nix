@@ -141,6 +141,16 @@ in rec {
     buildPhase = ''
 
       ${aflplusplus}/bin/afl-clang-fast \
+        -O0                             \
+        -g                              \
+        -fsanitize=address,undefined    \
+        -o miniz_harness_debug          \
+        -D MODE=0                       \
+        -I .                            \
+        -I ./miniz                      \
+        ./miniz_harness.c
+
+      ${aflplusplus}/bin/afl-clang-fast \
         -O2                             \
         -g                              \
         -fsanitize=address,undefined    \
