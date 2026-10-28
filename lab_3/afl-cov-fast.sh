@@ -1,13 +1,13 @@
 #! /usr/bin/env bash
 
 if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <MODE>" >&2
+    echo "Usage: $0 <OUT>" >&2
     exit 1
 fi
 
-MODE_NUMBER="$1"
+OUT="$1"
 
-cd "./lab_3/out/$MODE_NUMBER"
+cd "$OUT"
 
 gcc                              \
   -O2                            \
