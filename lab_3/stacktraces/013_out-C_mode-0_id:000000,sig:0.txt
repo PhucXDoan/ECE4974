@@ -1,0 +1,11 @@
+miniz/miniz_zip.c:1040:63: runtime error: addition of unsigned offset to 0x7cee449e0040 overflowed to 0x7ced44cd0048
+    #0 0x5dfcd685c32e in mz_zip_mem_read_func /build/source/./miniz/miniz_zip.c:1040:63
+    #1 0x5dfcd686f14b in mz_zip_reader_extract_to_mem_no_alloc1 /build/source/./miniz/miniz_zip.c:1583:13
+    #2 0x5dfcd6874948 in mz_zip_reader_extract_to_heap /build/source/./miniz/miniz_zip.c:1739:14
+    #3 0x5dfcd6966db3 in run /build/source/./miniz_harness.c:54:32
+    #4 0x5dfcd6967f97 in main /build/source/./miniz_harness.c:167:9
+    #5 0x7fbe4582b284 in __libc_start_call_main (/nix/store/57iz36553175g3178pvxjij8z5rcsd4n-glibc-2.42-61/lib/libc.so.6+0x2b284) (BuildId: 8ae0b698f2d4e727f569f64bb166e08ae30bd077)
+    #6 0x7fbe4582b337 in __libc_start_main@GLIBC_2.2.5 (/nix/store/57iz36553175g3178pvxjij8z5rcsd4n-glibc-2.42-61/lib/libc.so.6+0x2b337) (BuildId: 8ae0b698f2d4e727f569f64bb166e08ae30bd077)
+    #7 0x5dfcd669e454 in _start (/nix/store/9f7bddzdzcjmjssijadi4bndfwgqahrs-miniz_harnesses/miniz_harness_debug+0x83454)
+
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior miniz/miniz_zip.c:1040:63 
